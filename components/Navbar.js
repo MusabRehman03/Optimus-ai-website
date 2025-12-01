@@ -8,97 +8,56 @@ import { HiMenu, HiX } from 'react-icons/hi';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
-    <motion.nav
-      initial={{ y: -100 }}
+    <motion.header
+      initial={{ y: -20 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-cyan-500/20"
+      transition={{ duration: 0.35 }}
+      className="fixed inset-x-0 top-4 z-50 flex justify-center pointer-events-none"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="pointer-events-auto w-full max-xl:max-w-7xl px-4 xl:mx-20">
+        <div className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md shadow-lg rounded-full py-3 px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent"
-            >
+          <Link href="/" className="flex items-center gap-3">
+            <motion.div whileHover={{ scale: 1.02 }} className="text-xl font-bold text-slate-800 dark:text-white">
               Optimus AI
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link key={item.name} href={item.path}>
-                <motion.span
-                  whileHover={{ scale: 1.05 }}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 cursor-pointer"
-                >
-                  {item.name}
-                </motion.span>
-              </Link>
-            ))}
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-              >
-                Get Started
-              </motion.button>
-            </Link>
-          </div>
+          {/* Centered nav - use hidden on small screens */}
+          <nav className="hidden md:flex items-center gap-6 mx-auto">
+            <Link href="/" className="text-slate-700 dark:text-slate-200 hover:text-cyan-600 transition-colors font-medium">Home</Link>
+            <Link href="/about" className="text-slate-700 dark:text-slate-200 hover:text-cyan-600 transition-colors font-medium">About</Link>
+            <Link href="/services" className="text-slate-700 dark:text-slate-200 hover:text-cyan-600 transition-colors font-medium">Services</Link>
+          </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-cyan-400"
-            >
-              {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-            </button>
+          {/* Right side: Contact button + mobile toggle */}
+          <div className="flex items-center gap-3">
+            <Link href="/contact">
+              <motion.button whileHover={{ scale: 1.03 }} className="hidden md:inline-block bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold">Contact Us</motion.button>
+            </Link>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-md text-slate-800 dark:text-white">
+                {isOpen ? <HiX size={22} /> : <HiMenu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-black/95 backdrop-blur-lg border-t border-cyan-500/20"
-        >
-          <div className="px-4 pt-2 pb-4 space-y-2">
-            {navItems.map((item) => (
-              <Link key={item.name} href={item.path}>
-                <div
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-lg transition-colors duration-200"
-                >
-                  {item.name}
-                </div>
-              </Link>
-            ))}
-            <Link href="/contact">
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg text-white font-semibold"
-              >
-                Get Started
-              </button>
+        {/* Mobile dropdown */}
+        {isOpen && (
+          <div className="mt-3 bg-white/95 dark:bg-gray-900/90 rounded-lg shadow-md py-2 px-3 md:hidden">
+            <Link href="/" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-slate-800 dark:text-white">Home</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-slate-800 dark:text-white">About</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-slate-800 dark:text-white">Services</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="block mt-2">
+              <button className="w-full px-4 py-2 bg-cyan-500 text-white rounded-full">Contact Us</button>
             </Link>
           </div>
-        </motion.div>
-      )}
-    </motion.nav>
+        )}
+      </div>
+    </motion.header>
   );
 }
