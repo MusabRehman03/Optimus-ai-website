@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  /* Sky-blue themed variables */
+  --primary: #38bdf8; /* sky-400 */
+  --secondary: #7dd3fc; /* sky-300 */
+  --accent: #0ea5e9; /* sky-500 */
+  --background: #f0fbff; /* very light sky */
+  --foreground: #06263b; /* deep navy for text */
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  background: linear-gradient(135deg, var(--background) 0%, #ffffff 60%);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1fbff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--secondary), var(--primary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
