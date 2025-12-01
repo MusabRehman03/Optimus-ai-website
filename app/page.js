@@ -145,8 +145,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+  {/* Services Section */}
+  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -171,12 +171,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="p-8 rounded-2xl bg-gradient-to-br from-white/6 via-white/4 to-white/3 backdrop-blur-md border border-white/20 ring-1 ring-white/5 shadow-lg shadow-sky-200/10 hover:scale-105 hover:shadow-2xl hover:shadow-sky-300/15 transition-transform duration-300"
+                whileHover={{ scale: 1.03 }}
+                className="p-8 rounded-2xl bg-white border border-sky-100 shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="text-sky-500 mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-700">{service.description}</p>
+                <p className="text-slate-600">{service.description}</p>
               </motion.div>
             ))}
           </div>
