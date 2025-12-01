@@ -66,8 +66,8 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl top-20 left-10 animate-pulse"></div>
-          <div className="absolute w-96 h-96 bg-purple-600/20 rounded-full blur-3xl bottom-20 right-10 animate-pulse delay-1000"></div>
+          <div className="absolute w-96 h-96 bg-sky-500/20 rounded-full blur-3xl top-20 left-10 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-sky-600/20 rounded-full blur-3xl bottom-20 right-10 animate-pulse delay-1000"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -83,18 +83,18 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold mb-6"
             >
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 bg-clip-text text-transparent">
                 Transform Your Business
               </span>
               <br />
-              <span className="text-white">With AI Automation</span>
+              <span className="text-slate-800">With AI Automation</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto"
             >
               Harness the power of AI to automate workflows, enhance customer experiences, 
               and scale your business effortlessly.
@@ -110,16 +110,16 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+                  className="px-8 py-4 bg-gradient-to-r from-sky-500 to-sky-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-sky-500/50 transition-all duration-300"
                 >
-                  Get Started
+                  Contact Us
                 </motion.button>
               </Link>
               <Link href="/services">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-cyan-500 rounded-full text-cyan-400 font-bold text-lg hover:bg-cyan-500/10 transition-all duration-300"
+                  className="px-8 py-4 border-2 border-sky-300 rounded-full text-sky-500 font-bold text-lg hover:bg-sky-500/10 transition-all duration-300"
                 >
                   Explore Services
                 </motion.button>
@@ -135,12 +135,12 @@ export default function Home() {
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
-          <motion.div
+            <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2"
+            className="w-6 h-10 border-2 border-sky-400 rounded-full flex items-start justify-center p-2"
           >
-            <motion.div className="w-1 h-3 bg-cyan-400 rounded-full" />
+            <motion.div className="w-1 h-3 bg-sky-400 rounded-full" />
           </motion.div>
         </motion.div>
       </section>
@@ -155,10 +155,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">
               Our Services
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Comprehensive AI solutions tailored to your business needs
             </p>
           </motion.div>
@@ -172,11 +172,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20"
+                className="p-8 rounded-2xl bg-gradient-to-br from-white/6 via-white/4 to-white/3 backdrop-blur-md border border-white/20 ring-1 ring-white/5 shadow-lg shadow-sky-200/10 hover:scale-105 hover:shadow-2xl hover:shadow-sky-300/15 transition-transform duration-300"
               >
-                <div className="text-cyan-400 mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-400">{service.description}</p>
+                <div className="text-sky-500 mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-slate-700">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -184,8 +184,13 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/30">
-        <div className="max-w-7xl mx-auto">
+  <section
+    className="relative py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-scroll md:bg-fixed bg-cover bg-center min-h-[80vh] overflow-hidden"
+    style={{ backgroundImage: `url('/bg-image.png')` }}
+  >
+    {/* translucent sky overlay to keep text readable (image slightly less visible) */}
+    <div className="absolute inset-0 bg-sky-900/75 pointer-events-none" aria-hidden="true" />
+    <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -193,10 +198,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-sky-400 ">
               Why Choose Optimus AI?
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-100 max-w-2xl mx-auto">
               Experience the future of business automation
             </p>
           </motion.div>
@@ -209,7 +214,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6"
+                className="text-center p-8 bg-gradient-to-br from-white/6 via-white/4 to-white/3 backdrop-blur-sm rounded-2xl border border-white/20 shadow-md hover:scale-105 hover:shadow-2xl hover:shadow-sky-700/20 transition-transform duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -219,7 +224,7 @@ export default function Home() {
                   {feature.icon}
                 </motion.div>
                 <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <p className="text-slate-200">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -234,19 +239,19 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-r from-cyan-500/10 to-purple-600/10 border border-cyan-500/30 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-sky-100/50 to-sky-200/30 border border-cyan-500/30 rounded-3xl p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-slate-600 mb-8">
               Join hundreds of companies already using AI to automate and scale
             </p>
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-sky-500 to-sky-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-sky-500/50 transition-all duration-300"
               >
                 Schedule a Consultation
               </motion.button>

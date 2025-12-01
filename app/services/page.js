@@ -119,7 +119,7 @@ export default function Services() {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+  <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,8 +127,8 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">
                 Our Services
               </span>
             </h1>
@@ -157,19 +157,19 @@ export default function Services() {
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="inline-block text-cyan-400 mb-6"
+                  className="inline-block text-sky-500 mb-6"
                 >
                   {service.icon}
                 </motion.div>
-                <h2 className="text-4xl font-bold text-white mb-4">{service.title}</h2>
-                <p className="text-gray-300 text-lg mb-6">{service.description}</p>
+                <h2 className="text-4xl font-bold text-slate-800 mb-4">{service.title}</h2>
+                <p className="text-slate-600 text-lg mb-6">{service.description}</p>
 
                 <h3 className="text-2xl font-bold text-white mb-4">Key Features</h3>
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg
-                        className="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0 mt-1"
+                        className="w-6 h-6 text-sky-500 mr-3 flex-shrink-0 mt-1"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -195,13 +195,13 @@ export default function Services() {
                     <motion.div
                       key={idx}
                       whileHover={{ scale: 1.02, x: 10 }}
-                      className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300"
+                      className="bg-white/5 p-6 rounded-xl border border-sky-200 hover:border-sky-300 transition-all duration-300"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="text-cyan-400 text-2xl mt-1">{useCase.icon}</div>
+                        <div className="text-sky-500 text-2xl mt-1">{useCase.icon}</div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">{useCase.title}</h4>
-                          <p className="text-gray-400">{useCase.description}</p>
+                          <h4 className="text-xl font-bold text-slate-800 mb-2">{useCase.title}</h4>
+                          <p className="text-slate-600">{useCase.description}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -214,19 +214,19 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/30">
+  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-50/10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">
               Our Process
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-slate-600">
               Simple, transparent, and effective
             </p>
           </motion.div>
@@ -246,11 +246,11 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent mb-4">
+                <div className="text-6xl font-bold bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
+                <p className="text-slate-600">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function Services() {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-sky-500 to-sky-600 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-sky-500/50 transition-all duration-300"
             >
               Schedule a Free Consultation
             </motion.a>
