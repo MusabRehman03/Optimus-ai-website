@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MouseTrail from "@/components/MouseTrail";
 
 export const metadata = {
   title: "Optimus AI - Intelligent Automation Solutions",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <MouseTrail />
       </body>
     </html>
   );
